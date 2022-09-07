@@ -4,7 +4,9 @@ import State from "./core/State.js";
 export default class App extends Component {
     constructor(selector, props) {
         super(selector, props);
-        this._state = new State({});
+        this._state = new State({
+            activityStack: [],
+        });
         this.render();
     }
 

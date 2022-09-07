@@ -7,9 +7,9 @@ export default class DetailActivity extends Activity {
 
     template() {
         return `
-            <header></header>
-            <section></section>
-            <footer></footer>
+            <header>Detail</header>
+            <section>액티비티 입니다</section>
+            <footer>디테일의 푸터입니다.</footer>
         `;
     }
 }

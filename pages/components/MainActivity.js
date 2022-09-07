@@ -7,9 +7,9 @@ export default class MainActivity extends Activity {
 
     template() {
         return `
-            <header></header>
-            <section></section>
-            <footer></footer>
+            <header>Main</header>
+            <section>액티비티 입니다~</section>
+            <footer>홈 / 채팅</footer>
         `;
     }
 }

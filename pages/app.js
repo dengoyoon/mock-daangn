@@ -25,7 +25,7 @@ export default class App extends Component {
     }
 
     pushActivity(selectorName) {
-        this._target().insertAdjacentHTML("beforeend", `<div id=${selectorName}></div>`);
+        this._target.insertAdjacentHTML("beforeend", `<div id=${selectorName}></div>`);
         this._state.setState({
             activityStack: [...this.state.activityStack, new DetailActivity(`#${selectorName}`)],
         });

@@ -13,7 +13,9 @@ export default class App extends Component {
     }
 
     mounted() {
-        new MainActivity("#activity-main");
+        new MainActivity("#activity-main", {
+            pushActivity: this.pushActivity.bind(this),
+        });
     }
 
     template() {
@@ -24,6 +26,8 @@ export default class App extends Component {
 
     pushActivity(selectorName) {
         this._target().insertAdjacentHTML("beforeend", `<div id=${selectorName}></div>`);
-        new DetailActivity(`#${selectorName}`);
+        this._state.setState({
+            activityStack: [...this.state.activityStack, new DetailActivity(`#${selectorName}`)],
+        });
     }
 }

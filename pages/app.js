@@ -13,21 +13,22 @@ export default class App extends Component {
     }
 
     mounted() {
-        new MainActivity("#activity-main", {
+        new MainActivity("#activity", {
             pushActivity: this.pushActivity.bind(this),
         });
     }
 
     template() {
         return `
-            <div id="activity-main"></div>
+            <div id="activity"></div>
         `;
     }
 
-    pushActivity(selectorName) {
-        this._target().insertAdjacentHTML("beforeend", `<div id=${selectorName}></div>`);
+    pushActivity(activityId) {
+        // this._target().
+        console.log("SS");
         this._state.setState({
-            activityStack: [...this.state.activityStack, new DetailActivity(`#${selectorName}`)],
+            activityStack: [...this.state.activityStack, new DetailActivity(`#${activityId}`)],
         });
     }
 }

@@ -9,7 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "eslint-config-prettier": "^8.5.0"
+    "eslint-config-prettier": "^8.5.0",
+    "sass": "^1.54.9"
   },
   "devDependencies": {
     "eslint": "^8.23.0"

@@ -5,7 +5,6 @@ export default class Component {
     constructor(selector, props) {
         this._target = document.querySelector(selector);
         this._props = props;
-        this.setEvent();
     }
 
     get state() {

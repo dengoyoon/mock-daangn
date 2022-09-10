@@ -5,14 +5,27 @@ export default class DetailActivity extends Activity {
     constructor(selector, props) {
         super(selector, props);
         this._state = new State({});
-        this.render();
+        this._activityId = "detail";
+        this.setEvent();
     }
 
     template() {
         return `
-            <header>Detail</header>
-            <section>액티비티 입니다</section>
-            <footer>디테일의 푸터입니다.</footer>
+            <div id=${this._activityId}>
+                <header>Detail</header>
+                <section>디테일 입니다~</section>
+                <footer>롸롸뢀</footer>
+            </div>
         `;
+    }
+
+    onClickAll(event) {
+        // test code
+        console.log("DDDD");
+        this.popActivity();
+    }
+
+    setEvent() {
+        this.addEvent("click", `#${this._activityId}`, this.onClickAll.bind(this));
     }
 }

@@ -6,9 +6,8 @@ export default class MainActivity extends Activity {
     constructor(selector, props) {
         super(selector, props);
         this._state = new State({});
-        this._props = props;
         this._activityId = "main";
-        // this.render();
+        this.setEvent();
     }
 
     template() {
@@ -23,10 +22,10 @@ export default class MainActivity extends Activity {
 
     onClickAll(event) {
         // test code
-        this._props.pushActivity(new DetailActivity(`#activity-frame`));
+        this.pushActivity(new DetailActivity("#root"));
     }
 
     setEvent() {
-        // this.addEvent("click", "#main", this.onClickAll.bind(this));
+        this.addEvent("click", `#${this._activityId}`, this.onClickAll.bind(this));
     }
 }

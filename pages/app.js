@@ -3,7 +3,7 @@ import Component from "./core/Component.js";
 import State from "./core/State.js";
 import { activityStackObserver } from "./core/Observer.js";
 
-const getArrayTop = (array) => array[array.length - 1];
+const getActivityTop = (array) => array[array.length - 1];
 
 export default class App extends Component {
     constructor(selector, props) {
@@ -18,7 +18,6 @@ export default class App extends Component {
     template() {}
 
     mounted() {
-        const activityTop = getArrayTop(this.state.activityStack);
-        activityTop.render();
+        getActivityTop(this.state.activityStack).render();
     }
 }

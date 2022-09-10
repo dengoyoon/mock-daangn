@@ -1,6 +1,8 @@
 import Component from "./Component.js";
+import { activityStackObserver } from "./Observer.js";
 
 const getActivityId = (selector) => selector.slice(1);
+const getPoppedArray = (array) => array.slice(0, array.length - 1);
 
 export default class Activity extends Component {
     // 화면 전환 효과
@@ -9,5 +11,17 @@ export default class Activity extends Component {
     _activityId;
     constructor(selector, props) {
         super(selector, props);
+    }
+
+    pushActivity(activity) {
+        activityStackObserver.update({
+            activityStack: [...activityStackObserver.get().activityStack, activity],
+        });
+    }
+
+    popActivity() {
+        activityStackObserver.update({
+            activityStack: [...getPoppedArray(activityStackObserver.get().activityStack)],
+        });
     }
 }

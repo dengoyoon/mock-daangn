@@ -1,34 +1,24 @@
 import MainActivity from "./components/MainActivity.js";
-import DetailActivity from "./components/DetailActivity.js";
 import Component from "./core/Component.js";
 import State from "./core/State.js";
+import { activityStackObserver } from "./core/Observer.js";
+
+const getArrayTop = (array) => array[array.length - 1];
 
 export default class App extends Component {
     constructor(selector, props) {
         super(selector, props);
-        this._state = new State({
-            activityStack: [],
+        this._state = new State(activityStackObserver.get());
+        activityStackObserver.subscribe(this.setState.bind(this));
+        activityStackObserver.update({
+            activityStack: [new MainActivity("#root")],
         });
-        this.render();
     }
+
+    template() {}
 
     mounted() {
-        new MainActivity("#activity", {
-            pushActivity: this.pushActivity.bind(this),
-        });
-    }
-
-    template() {
-        return `
-            <div id="activity"></div>
-        `;
-    }
-
-    pushActivity(activityId) {
-        // this._target().
-        console.log("SS");
-        this._state.setState({
-            activityStack: [...this.state.activityStack, new DetailActivity(`#${activityId}`)],
-        });
+        const activityTop = getArrayTop(this.state.activityStack);
+        activityTop.render();
     }
 }

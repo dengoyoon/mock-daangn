@@ -1,3 +1,5 @@
+import MainActivity from "../components/MainActivity.js";
+
 class Observer {
     _state;
     _subscribers;
@@ -31,3 +33,7 @@ class Observer {
         this._subscribers.add(callback);
     }
 }
+
+export const activityStackObserver = new Observer({
+    activityStack: [],
+});

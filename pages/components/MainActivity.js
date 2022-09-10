@@ -1,28 +1,32 @@
 import Activity from "../core/Activity.js";
 import State from "../core/State.js";
+import DetailActivity from "./DetailActivity.js";
 
 export default class MainActivity extends Activity {
     constructor(selector, props) {
         super(selector, props);
         this._state = new State({});
         this._props = props;
-        this.render();
+        this._activityId = "main";
+        // this.render();
     }
 
     template() {
         return `
-            <header>Main</header>
-            <section>액티비티 입니다~</section>
-            <footer>홈 / 채팅</footer>
+            <div id=${this._activityId}>
+                <header>Main</header>
+                <section>액티비티 입니다~</section>
+                <footer>홈 / 채팅</footer>
+            </div>
         `;
     }
 
     onClickAll(event) {
         // test code
-        this._props.pushActivity("activity-detail");
+        this._props.pushActivity(new DetailActivity(`#activity-frame`));
     }
 
     setEvent() {
-        this.addEvent("click", "#activity-main", this.onClickAll.bind(this));
+        // this.addEvent("click", "#main", this.onClickAll.bind(this));
     }
 }

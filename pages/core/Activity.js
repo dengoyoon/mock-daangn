@@ -9,6 +9,5 @@ export default class Activity extends Component {
     _activityId;
     constructor(selector, props) {
         super(selector, props);
-        this._activityId = getActivityId(selector);
     }
 }

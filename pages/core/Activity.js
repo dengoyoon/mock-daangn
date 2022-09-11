@@ -1,25 +1,33 @@
 import Component from "./Component.js";
 import { activityStackObserver } from "./Observer.js";
 
-const getActivityId = (selector) => selector.slice(1);
 const getPoppedArray = (array) => array.slice(0, array.length - 1);
+const clearArray = (array) => (array.length = 0);
 
 export default class Activity extends Component {
     // 화면 전환 효과
-    // activityStack에 push / pop 조작
-    // 직접적으로 필요한가 싶기도 한데 일단은 제작
+
     _activityId;
     constructor(selector, props) {
         super(selector, props);
     }
 
+    clearEvents() {
+        this._registedEvents.forEach((event) => {
+            this._target.removeEventListener(event.type, event.eventListener);
+        });
+        clearArray(this._registedEvents);
+    }
+
     pushActivity(activity) {
+        // this.clearEvents();
         activityStackObserver.update({
             activityStack: [...activityStackObserver.get().activityStack, activity],
         });
     }
 
     popActivity() {
+        this.clearEvents();
         activityStackObserver.update({
             activityStack: [...getPoppedArray(activityStackObserver.get().activityStack)],
         });

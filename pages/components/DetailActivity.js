@@ -21,7 +21,6 @@ export default class DetailActivity extends Activity {
 
     onClickAll(event) {
         // test code
-        console.log("DDDD");
         this.popActivity();
     }
 

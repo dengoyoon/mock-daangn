@@ -34,6 +34,4 @@ class Observer {
     }
 }
 
-export const activityStackObserver = new Observer({
-    activityStack: [],
-});
+export const activityStackObserver = new Observer({ activityStack: [] });

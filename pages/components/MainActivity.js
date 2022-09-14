@@ -2,6 +2,8 @@ import Activity from "../core/Activity.js";
 import State from "../core/State.js";
 import DetailActivity from "./DetailActivity.js";
 
+import "../stylesheets/main.scss";
+
 export default class MainActivity extends Activity {
     constructor(selector, props) {
         super(selector, props);
@@ -12,7 +14,7 @@ export default class MainActivity extends Activity {
 
     template() {
         return `
-            <div id=${this._activityId}>
+            <div id="${this._activityId}">
                 <header>Main</header>
                 <section>액티비티 입니다~</section>
                 <footer>홈 / 채팅</footer>

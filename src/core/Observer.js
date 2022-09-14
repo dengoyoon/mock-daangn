@@ -1,5 +1,3 @@
-import MainActivity from "../components/MainActivity.js";
-
 class Observer {
     _state;
     _subscribers;

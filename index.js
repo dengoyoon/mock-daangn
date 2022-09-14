@@ -1,3 +1,3 @@
-import App from "./pages/app.js";
+import App from "./src/app.js";
 
 const app = new App("#root");

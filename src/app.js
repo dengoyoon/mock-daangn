@@ -1,4 +1,4 @@
-import MainActivity from "./components/MainActivity.js";
+import MainActivity from "./pages/MainActivity.js";
 import Component from "./core/Component.js";
 import State from "./core/State.js";
 import { activityStackObserver } from "./core/Observer.js";

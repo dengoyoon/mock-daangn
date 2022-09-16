@@ -37,16 +37,16 @@ export default class Toolbar extends Component {
         super(selector, props);
         this._id = props.id;
         this._title = props.title;
-        this._leftComponents = props._leftComponents;
+        this._leftComponent = props._leftComponent;
         this._rightComponents = props._rightComponents;
         this.render();
     }
 
     template() {
         return `
-            <div>Left Components</div>
-            <div>${this._title}</div>
-            <div>Right Components</div>
+            <div class="toolbar--left">행신 3동</div>
+            <div class="toolbar--title">${this._title}</div>
+            <div class="toolbar--right"><div class="toolbar--item">버튼</div><div class="toolbar--item">버튼</div><div class="toolbar--item">버튼</div></div>
         `;
     }
 

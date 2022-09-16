@@ -5,8 +5,6 @@ const getPoppedArray = (array) => array.slice(0, array.length - 1);
 const clearArray = (array) => (array.length = 0);
 
 export default class Activity extends Component {
-    // 화면 전환 효과
-
     _activityId;
     constructor(selector, props) {
         super(selector, props);
@@ -20,7 +18,6 @@ export default class Activity extends Component {
     }
 
     pushActivity(activity) {
-        // this.clearEvents();
         activityStackObserver.update({
             activityStack: [...activityStackObserver.get().activityStack, activity],
         });

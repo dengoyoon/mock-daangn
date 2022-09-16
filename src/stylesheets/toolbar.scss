@@ -1,0 +1,29 @@
+$toolbarHeight : 50px;
+
+.toolbar {
+    display: grid;
+    background-color: white;
+    border-bottom: 0.1px solid rgb(199, 199, 199);
+    margin: 0;
+    height: $toolbarHeight;
+    line-height: $toolbarHeight;
+    grid-template-columns: 1fr 100px 1fr;
+    font-size: 16px;
+    font-weight: 600;
+
+    &--left {
+        display: flex;
+        margin-left: 20px;
+    }
+    &--title {
+        text-align: center;
+    }
+    &--right {
+        display: flex;
+        margin-left: auto;
+        margin-right: 20px;
+    }
+    &--item {
+        margin-left: 10px;
+    }
+}

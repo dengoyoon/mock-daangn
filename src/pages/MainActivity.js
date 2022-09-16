@@ -1,6 +1,7 @@
 import Activity from "../core/Activity.js";
 import State from "../core/State.js";
 import DetailActivity from "./DetailActivity.js";
+import Toolbar from "../components/Toolbar.js";
 
 import "../stylesheets/main.scss";
 
@@ -15,11 +16,20 @@ export default class MainActivity extends Activity {
     template() {
         return `
             <div id="${this._activityId}">
-                <header>Main</header>
-                <section>액티비티 입니다~</section>
-                <footer>홈 / 채팅</footer>
+                <header class='toolbar'></header>
+                <section class='list'>액티비티 입니다</section>
+                <footer class='bottom-navigation'>홈 / 채팅</footer>
             </div>
         `;
+    }
+
+    mounted() {
+        new Toolbar(".toolbar", {
+            id: "main-toolbar",
+            title: "",
+            leftComponent: [],
+            rightComponents: [],
+        });
     }
 
     onClickAll(event) {

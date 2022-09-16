@@ -28,11 +28,29 @@ export default class Toolbar extends Component {
     - 툴바의 인스턴스 메서드로 아이콘 부착 및 클릭 이벤트 (이건 콜백함수로?)를 마련하면 될듯..!!
     */
 
+    _title;
+    _id;
+    _leftComponents;
+    _rightComponents;
+
     constructor(selector, props) {
         super(selector, props);
+        this._id = props.id;
+        this._title = "";
+        this._leftComponents = props._leftComponents;
+        this._rightComponents = props._rightComponents;
+        this.render();
     }
 
     template() {
-        return ``;
+        return `
+            <div>Left Components</div>
+            <div>Title</div>
+            <div>Right Components</div>
+        `;
+    }
+
+    setTitle(title) {
+        this._title = title;
     }
 }

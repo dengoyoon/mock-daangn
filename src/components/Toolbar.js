@@ -36,7 +36,7 @@ export default class Toolbar extends Component {
     constructor(selector, props) {
         super(selector, props);
         this._id = props.id;
-        this._title = "";
+        this._title = props.title;
         this._leftComponents = props._leftComponents;
         this._rightComponents = props._rightComponents;
         this.render();
@@ -45,7 +45,7 @@ export default class Toolbar extends Component {
     template() {
         return `
             <div>Left Components</div>
-            <div>Title</div>
+            <div>${this._title}</div>
             <div>Right Components</div>
         `;
     }

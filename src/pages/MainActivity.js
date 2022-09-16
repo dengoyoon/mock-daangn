@@ -26,6 +26,7 @@ export default class MainActivity extends Activity {
     mounted() {
         new Toolbar(".toolbar", {
             id: "main-toolbar",
+            title: "MAIN",
             leftComponents: [],
             rightComponents: [],
         });

@@ -3,6 +3,10 @@ import State from "../core/State.js";
 import DetailActivity from "./DetailActivity.js";
 import Toolbar from "../components/Toolbar.js";
 
+import ic_search from "../img/ic_search.png";
+import ic_category from "../img/ic_category.png";
+import ic_alarm from "../img/ic_alarm.png";
+
 import "../stylesheets/main.scss";
 
 export default class MainActivity extends Activity {
@@ -27,8 +31,8 @@ export default class MainActivity extends Activity {
         new Toolbar(".toolbar", {
             id: "main-toolbar",
             title: "",
-            leftComponent: [],
-            rightComponents: [],
+            leftComponent: "행신 3동",
+            rightComponents: [ic_search, ic_category, ic_alarm],
         });
     }
 

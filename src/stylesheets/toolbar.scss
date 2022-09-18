@@ -8,7 +8,7 @@ $toolbarHeight : 50px;
     height: $toolbarHeight;
     line-height: $toolbarHeight;
     grid-template-columns: 1fr 100px 1fr;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 600;
 
     &--left {
@@ -22,8 +22,13 @@ $toolbarHeight : 50px;
         display: flex;
         margin-left: auto;
         margin-right: 20px;
+        justify-content: center;
+        align-items: center;
     }
     &--item {
         margin-left: 10px;
+        width: 20px;
+        margin-left: 12px;
+        height: fit-content;
     }
 }

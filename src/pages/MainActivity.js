@@ -32,11 +32,7 @@ export default class MainActivity extends Activity {
             id: "main-toolbar",
             title: "",
             leftComponent: "행신 3동",
-            rightComponents: [
-                `<img class="toolbar--item" src="${ic_search}"/>`,
-                `<img class="toolbar--item" src="${ic_category}"/>`,
-                `<img class="toolbar--item" src="${ic_alarm}"/>`,
-            ],
+            rightComponents: [ic_search, ic_category, ic_alarm],
         });
     }
 

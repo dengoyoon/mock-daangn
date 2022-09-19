@@ -1,14 +1,14 @@
-import Activity from "../core/Activity.js";
-import State from "../core/State.js";
-import DetailActivity from "./DetailActivity.js";
-import Toolbar from "../components/Toolbar.js";
-import List from "../components/List.js";
+import Activity from "../../core/Activity.js";
+import State from "../../core/State.js";
+import Toolbar from "../../components/Toolbar.js";
+import List from "../../components/List.js";
+import DetailActivity from "../detail/DetailActivity.js";
 
-import ic_search from "../img/ic_search.png";
-import ic_category from "../img/ic_category.png";
-import ic_alarm from "../img/ic_alarm.png";
+import ic_search from "../../img/ic_search.png";
+import ic_category from "../../img/ic_category.png";
+import ic_alarm from "../../img/ic_alarm.png";
 
-import "../stylesheets/main.scss";
+import "../../stylesheets/main.scss";
 
 export default class MainActivity extends Activity {
     constructor(selector, props) {

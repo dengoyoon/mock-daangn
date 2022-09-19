@@ -1,5 +1,5 @@
-import Activity from "../core/Activity.js";
-import State from "../core/State.js";
+import Activity from "../../core/Activity.js";
+import State from "../../core/State.js";
 
 export default class DetailActivity extends Activity {
     constructor(selector, props) {

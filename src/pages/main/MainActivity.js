@@ -21,8 +21,8 @@ export default class MainActivity extends Activity {
     template() {
         return `
             <div id="${this._activityId}">
-                <header class='toolbar'></header>
-                <section class='list'></section>
+                <header id='main-toolbar' class='toolbar'></header>
+                <section id='home-list' class='list'></section>
                 <footer class='bottom-navigation'>홈 / 채팅</footer>
             </div>
         `;
@@ -38,7 +38,7 @@ export default class MainActivity extends Activity {
 
         new HomeList(".list", {
             id: "home-list",
-            itemList: [],
+            itemList: [1, 2, 3],
         });
     }
 

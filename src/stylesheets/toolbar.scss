@@ -1,9 +1,10 @@
 $toolbarHeight : 50px;
+$divideLineColor : rgb(199, 199, 199);
 
 .toolbar {
     display: grid;
     background-color: white;
-    border-bottom: 0.1px solid rgb(199, 199, 199);
+    border-bottom: 0.1px solid $divideLineColor;
     margin: 0;
     height: $toolbarHeight;
     line-height: $toolbarHeight;

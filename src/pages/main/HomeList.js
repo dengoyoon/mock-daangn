@@ -1,6 +1,6 @@
-import Component from "../core/Component.js";
+import Component from "../../core/Component.js";
 
-export default class List extends Component {
+export default class HomeList extends Component {
     _id;
     _itemList;
 

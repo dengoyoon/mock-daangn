@@ -2,6 +2,7 @@ import Activity from "../core/Activity.js";
 import State from "../core/State.js";
 import DetailActivity from "./DetailActivity.js";
 import Toolbar from "../components/Toolbar.js";
+import List from "../components/List.js";
 
 import ic_search from "../img/ic_search.png";
 import ic_category from "../img/ic_category.png";
@@ -21,7 +22,7 @@ export default class MainActivity extends Activity {
         return `
             <div id="${this._activityId}">
                 <header class='toolbar'></header>
-                <section class='list'>액티비티 입니다</section>
+                <section class='list'></section>
                 <footer class='bottom-navigation'>홈 / 채팅</footer>
             </div>
         `;
@@ -33,6 +34,11 @@ export default class MainActivity extends Activity {
             title: "",
             leftComponent: "행신 3동",
             rightComponents: [ic_search, ic_category, ic_alarm],
+        });
+
+        new List(".list", {
+            id: "main-toolbar",
+            itemList: [],
         });
     }
 

@@ -1,13 +1,14 @@
-import Activity from "../core/Activity.js";
-import State from "../core/State.js";
-import DetailActivity from "./DetailActivity.js";
-import Toolbar from "../components/Toolbar.js";
+import Activity from "../../core/Activity.js";
+import State from "../../core/State.js";
+import Toolbar from "../../components/Toolbar.js";
+import DetailActivity from "../detail/DetailActivity.js";
+import HomeList from "./HomeList.js";
 
-import ic_search from "../img/ic_search.png";
-import ic_category from "../img/ic_category.png";
-import ic_alarm from "../img/ic_alarm.png";
+import ic_search from "../../img/ic_search.png";
+import ic_category from "../../img/ic_category.png";
+import ic_alarm from "../../img/ic_alarm.png";
 
-import "../stylesheets/main.scss";
+import "../../stylesheets/main.scss";
 
 export default class MainActivity extends Activity {
     constructor(selector, props) {
@@ -21,7 +22,7 @@ export default class MainActivity extends Activity {
         return `
             <div id="${this._activityId}">
                 <header class='toolbar'></header>
-                <section class='list'>액티비티 입니다</section>
+                <section class='list'></section>
                 <footer class='bottom-navigation'>홈 / 채팅</footer>
             </div>
         `;
@@ -33,6 +34,11 @@ export default class MainActivity extends Activity {
             title: "",
             leftComponent: "행신 3동",
             rightComponents: [ic_search, ic_category, ic_alarm],
+        });
+
+        new HomeList(".list", {
+            id: "home-list",
+            itemList: [],
         });
     }
 

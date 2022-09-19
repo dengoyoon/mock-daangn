@@ -15,7 +15,9 @@ export default class HomeList extends Component {
 
     mounted() {
         this._itemList.forEach((item) => {
-            new HomeListItem(".list", item);
+            new HomeListItem(".list", {
+                item: item,
+            });
         });
     }
 }

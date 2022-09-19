@@ -8,6 +8,8 @@ import ic_search from "../../img/ic_search.png";
 import ic_category from "../../img/ic_category.png";
 import ic_alarm from "../../img/ic_alarm.png";
 
+import { dummyHome } from "../../utils/dummyData.js";
+
 import "../../stylesheets/main.scss";
 
 export default class MainActivity extends Activity {
@@ -38,7 +40,7 @@ export default class MainActivity extends Activity {
 
         new HomeList(".list", {
             id: "home-list",
-            itemList: [1, 2, 3],
+            itemList: [...dummyHome],
         });
     }
 

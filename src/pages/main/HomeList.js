@@ -1,4 +1,5 @@
 import Component from "../../core/Component.js";
+import HomeListItem from "./HomeListItem.js";
 
 export default class HomeList extends Component {
     _id;
@@ -12,28 +13,11 @@ export default class HomeList extends Component {
         this.setEvent();
     }
 
-    template() {
-        return `
-            <div class = 'list--item'>item1</div>
-            <div class = 'list--item'>item2</div>
-            <div class = 'list--item'>item3</div>
-            <div class = 'list--item'>item4</div>
-            <div class = 'list--item'>item5</div>
-            <div class = 'list--item'>item1</div>
-            <div class = 'list--item'>item2</div>
-            <div class = 'list--item'>item3</div>
-            <div class = 'list--item'>item4</div>
-            <div class = 'list--item'>item5</div>
-            <div class = 'list--item'>item1</div>
-            <div class = 'list--item'>item2</div>
-            <div class = 'list--item'>item3</div>
-            <div class = 'list--item'>item4</div>
-            <div class = 'list--item'>item5</div>
-            <div class = 'list--item'>item1</div>
-            <div class = 'list--item'>item2</div>
-            <div class = 'list--item'>item3</div>
-            <div class = 'list--item'>item4</div>
-            <div class = 'list--item'>item5</div>
-        `;
+    mounted() {
+        this._itemList.forEach((item) => {
+            new HomeListItem(".list", {
+                item: item,
+            });
+        });
     }
 }

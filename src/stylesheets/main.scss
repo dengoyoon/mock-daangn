@@ -1,1 +1,19 @@
 @import 'toolbar.scss';
+
+$toolbarHeight : 50px;
+$bottomNavigationHeight : 55px;
+
+#main {
+    display: grid;
+    height: 100%;
+    grid-template-rows: $toolbarHeight 1fr $bottomNavigationHeight;
+}
+
+.list {
+    overflow: auto;
+}
+
+.bottom-navigation {
+    text-align: center;
+    align-items: center;
+}

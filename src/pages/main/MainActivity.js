@@ -8,6 +8,8 @@ import ic_search from "../../img/ic_search.png";
 import ic_category from "../../img/ic_category.png";
 import ic_alarm from "../../img/ic_alarm.png";
 
+import { dummyHome } from "../../utils/dummyData.js";
+
 import "../../stylesheets/main.scss";
 
 export default class MainActivity extends Activity {
@@ -21,8 +23,8 @@ export default class MainActivity extends Activity {
     template() {
         return `
             <div id="${this._activityId}">
-                <header class='toolbar'></header>
-                <section class='list'></section>
+                <header id='main-toolbar' class='toolbar'></header>
+                <section id='home-list' class='list'></section>
                 <footer class='bottom-navigation'>홈 / 채팅</footer>
             </div>
         `;
@@ -38,7 +40,7 @@ export default class MainActivity extends Activity {
 
         new HomeList(".list", {
             id: "home-list",
-            itemList: [],
+            itemList: [...dummyHome],
         });
     }
 

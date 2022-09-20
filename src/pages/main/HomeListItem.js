@@ -22,9 +22,9 @@ export default class HomeListItem extends Component {
             <div class='home--item'>
                 <img class='home--item--img' src='${this._item.productImageUrl}'/>
                 <div class='home--item--content'>
-                    <div>${this._item.productName}</div>
-                    <div>${this._item.locationName}</div>
-                    <div>${this._item.price}원</div>
+                    <div class='home--item--content--name'>${this._item.productName}</div>
+                    <div class='home--item--content--location'>${this._item.locationName} · ${this._item.ago}</div>
+                    <div class='home--item--content--price'>${this._item.price}원</div>
                 </div>
             </div>
         `;

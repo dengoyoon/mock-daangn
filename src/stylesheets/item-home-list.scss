@@ -14,12 +14,30 @@ $itemHeight : 100px;
 
     &--img {
         border: 0.1px solid $divideLineColor;
-        border-radius: 5px;
+        border-radius: 8px;
         width: $imageSize;
         height: $imageSize;
     }
 
     &--content {
         margin-left: $itemMargin;
+
+        &--name {
+            margin-top: 4px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+    
+        &--location {
+            margin-top: 5px;
+            font-size: 11px;
+            color: rgb(148, 148, 148);
+        }
+    
+        &--price {
+            margin-top: 7px;
+            font-size: 16px;
+            font-weight: 700;
+        }
     }
 }

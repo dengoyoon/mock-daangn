@@ -1,6 +1,24 @@
-$divideLineColor : rgb(199, 199, 199);
+$divideLineColor : rgb(231, 231, 231);
+$imageSize : 100px;
+$itemMargin : 15px;
 
-.home--list--item {
+.home--item {
+    display: flex;
     border-bottom: 0.1px solid $divideLineColor;
-    height: 130px;
+    height: 100px;
+    padding-top: $itemMargin;
+    padding-bottom: $itemMargin;
+    margin-left: $itemMargin;
+    margin-right: $itemMargin;
+
+    &--img {
+        border: 0.1px solid $divideLineColor;
+        border-radius: 5px;
+        width: $imageSize;
+        height: $imageSize;
+    }
+
+    &--content {
+        margin-left: $itemMargin;
+    }
 }

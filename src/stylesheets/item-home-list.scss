@@ -2,6 +2,7 @@ $divideLineColor : rgb(231, 231, 231);
 $imageSize : 100px;
 $itemMargin : 15px;
 $itemHeight : 100px;
+$iconSize : 14px;
 
 .home--item {
     display: flex;
@@ -11,7 +12,9 @@ $itemHeight : 100px;
     padding-bottom: $itemMargin;
     margin-left: $itemMargin;
     margin-right: $itemMargin;
+}
 
+.item {
     &--img {
         border: 0.1px solid $divideLineColor;
         border-radius: 8px;
@@ -20,6 +23,7 @@ $itemHeight : 100px;
     }
 
     &--content {
+        flex: 1;
         margin-left: $itemMargin;
 
         &--name {
@@ -31,7 +35,7 @@ $itemHeight : 100px;
         &--location {
             margin-top: 5px;
             font-size: 11px;
-            color: rgb(148, 148, 148);
+            color: rgb(76, 76, 76);
         }
     
         &--price {
@@ -39,5 +43,33 @@ $itemHeight : 100px;
             font-size: 16px;
             font-weight: 700;
         }
+
+        &--likeandchat {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
     }
+}
+
+.likeandchat--element{
+    display: flex;
+    margin-left: 5px;
+    color: rgb(148, 148, 148);
+    align-items: center;
+
+    &--icon {
+        width: $iconSize;
+        height: fit-content;
+    }
+
+    &--text {
+        font-size: 12px;
+        margin-left: 3px;
+    }
+}
+
+.hide {
+    display: none;
 }

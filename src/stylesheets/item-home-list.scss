@@ -1,11 +1,12 @@
 $divideLineColor : rgb(231, 231, 231);
 $imageSize : 100px;
 $itemMargin : 15px;
+$itemHeight : 100px;
 
 .home--item {
     display: flex;
     border-bottom: 0.1px solid $divideLineColor;
-    height: 100px;
+    height: $itemHeight;
     padding-top: $itemMargin;
     padding-bottom: $itemMargin;
     margin-left: $itemMargin;

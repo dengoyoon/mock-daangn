@@ -8,6 +8,7 @@ import BottomNavigation from "./BottomNavigation.js";
 import ic_search from "../../img/ic_search.png";
 import ic_category from "../../img/ic_category.png";
 import ic_alarm from "../../img/ic_alarm.png";
+import ic_plus_orange from "../../img/ic_plus_orange.png";
 
 import { dummyHome } from "../../utils/dummyData.js";
 
@@ -27,6 +28,9 @@ export default class MainActivity extends Activity {
                 <header id='main-toolbar' class='toolbar'></header>
                 <section id='home-list' class='list'></section>
                 <footer class='bottom-navigation'></footer>
+                <button type='button' class='floating-button'>
+                    <img src='${ic_plus_orange}'/>
+                </button>
             </div>
         `;
     }

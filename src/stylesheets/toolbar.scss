@@ -1,4 +1,5 @@
 $divideLineColor : rgb(231, 231, 231);
+$iconSize : 18px;
 
 .toolbar {
     display: grid;
@@ -25,9 +26,8 @@ $divideLineColor : rgb(231, 231, 231);
         align-items: center;
     }
     &--item {
-        margin-left: 10px;
-        width: 20px;
-        margin-left: 12px;
+        width: $iconSize;
+        margin-left: 16px;
         height: fit-content;
     }
 }

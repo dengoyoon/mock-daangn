@@ -1,0 +1,18 @@
+$iconSize : 20px;
+$divideLineColor : rgb(231, 231, 231);
+
+.bottom--button {
+    background-color: white;
+    border: 0px;
+    border-top: 0.1px solid $divideLineColor;
+
+    &--img {
+        width: $iconSize;
+        height: fit-content;
+    }
+
+    &--text {
+        margin-top: 4px;
+        font-size: 9px;
+    }
+}

@@ -3,10 +3,12 @@ import State from "../../core/State.js";
 import Toolbar from "../../components/Toolbar.js";
 import DetailActivity from "../detail/DetailActivity.js";
 import HomeList from "./HomeList.js";
+import BottomNavigation from "./BottomNavigation.js";
 
 import ic_search from "../../img/ic_search.png";
 import ic_category from "../../img/ic_category.png";
 import ic_alarm from "../../img/ic_alarm.png";
+import ic_plus_orange from "../../img/ic_plus_orange.png";
 
 import { dummyHome } from "../../utils/dummyData.js";
 
@@ -25,7 +27,10 @@ export default class MainActivity extends Activity {
             <div id="${this._activityId}">
                 <header id='main-toolbar' class='toolbar'></header>
                 <section id='home-list' class='list'></section>
-                <footer class='bottom-navigation'>홈 / 채팅</footer>
+                <footer class='bottom-navigation'></footer>
+                <button type='button' class='floating-button'>
+                    <img src='${ic_plus_orange}'/>
+                </button>
             </div>
         `;
     }
@@ -42,6 +47,8 @@ export default class MainActivity extends Activity {
             id: "home-list",
             itemList: [...dummyHome],
         });
+
+        new BottomNavigation(".bottom-navigation");
     }
 
     onClickAll(event) {

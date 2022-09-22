@@ -26,8 +26,8 @@ export default class Toolbar extends Component {
 
     getRightComponents() {
         return this._rightComponents
-            .map((icon) => {
-                return `<img class="toolbar--item" src="${icon}"/>`;
+            .map((component) => {
+                return `<img id='${component.id}' class="toolbar--right--item" src="${component.icon}"/>`;
             })
             .join("");
     }

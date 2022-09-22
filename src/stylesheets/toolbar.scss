@@ -24,10 +24,11 @@ $iconSize : 18px;
         margin-right: 20px;
         justify-content: center;
         align-items: center;
-    }
-    &--item {
-        width: $iconSize;
-        margin-left: 16px;
-        height: fit-content;
+
+        &--item {
+            width: $iconSize;
+            margin-left: 16px;
+            height: fit-content;
+        }
     }
 }

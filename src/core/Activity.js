@@ -6,8 +6,14 @@ const clearArray = (array) => (array.length = 0);
 
 export default class Activity extends Component {
     _activityId;
-    constructor(selector, props) {
+    _intent;
+    constructor(selector, props, intent) {
         super(selector, props);
+        this._intent = intent;
+    }
+
+    get intent() {
+        return this._intent;
     }
 
     clearEvents() {

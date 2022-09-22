@@ -87,11 +87,9 @@ export default class MainActivity extends Activity {
     }
 
     setEvent() {
-        // this.addEvent("click", `#main-toolbar`, this.onClickToolbar.bind(this));
         this.addEvent("click", `.toolbar--left`, this.onClickTownName.bind(this));
         this.addEvent("click", `#toolbar--right--category`, this.onClickCategoryButton.bind(this));
         this.addEvent("click", `#home-list`, this.onClickList.bind(this));
-        // this.addEvent("click", `#home-bottom-navigation`, this.onClickBottomNavigation.bind(this));
         this.addEvent("click", "#floating-button", this.onClickFloatingButton.bind(this));
     }
 }

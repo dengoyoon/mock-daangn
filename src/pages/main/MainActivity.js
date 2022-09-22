@@ -27,8 +27,8 @@ export default class MainActivity extends Activity {
             <div id="${this._activityId}">
                 <header id='main-toolbar' class='toolbar'></header>
                 <section id='home-list' class='list'></section>
-                <footer class='bottom-navigation'></footer>
-                <button type='button' class='floating-button'>
+                <footer id="home-bottom-navigation" class='bottom-navigation'></footer>
+                <button id='floating-button' type='button' class='floating-button'>
                     <img src='${ic_plus_orange}'/>
                 </button>
             </div>
@@ -40,7 +40,20 @@ export default class MainActivity extends Activity {
             id: "main-toolbar",
             title: "",
             leftComponent: "행신 3동",
-            rightComponents: [ic_search, ic_category, ic_alarm],
+            rightComponents: [
+                {
+                    id: "toolbar--right--search",
+                    icon: ic_search,
+                },
+                {
+                    id: "toolbar--right--category",
+                    icon: ic_category,
+                },
+                {
+                    id: "toolbar--right--alarm",
+                    icon: ic_alarm,
+                },
+            ],
         });
 
         new HomeList(".list", {
@@ -48,15 +61,35 @@ export default class MainActivity extends Activity {
             itemList: [...dummyHome],
         });
 
-        new BottomNavigation(".bottom-navigation");
+        new BottomNavigation(".bottom-navigation", {
+            id: "home-bottom-navigation",
+        });
     }
 
-    onClickAll(event) {
-        // test code
+    onClickTownName(event) {
+        console.log("동네이름 클릭~");
+    }
+
+    onClickCategoryButton(event) {
+        console.log("카테고리 클릭~");
+    }
+
+    onClickList(event) {
         this.pushActivity(new DetailActivity("#root"));
     }
 
+    onClickBottomNavigation(event) {
+        console.log("CLICK BOTTOM NAVI");
+    }
+
+    onClickFloatingButton(event) {
+        console.log("CLICK Floating BUtton");
+    }
+
     setEvent() {
-        this.addEvent("click", `#${this._activityId}`, this.onClickAll.bind(this));
+        this.addEvent("click", `.toolbar--left`, this.onClickTownName.bind(this));
+        this.addEvent("click", `#toolbar--right--category`, this.onClickCategoryButton.bind(this));
+        this.addEvent("click", `#home-list`, this.onClickList.bind(this));
+        this.addEvent("click", "#floating-button", this.onClickFloatingButton.bind(this));
     }
 }

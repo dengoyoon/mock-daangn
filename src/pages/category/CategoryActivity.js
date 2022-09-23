@@ -1,6 +1,7 @@
 import Activity from "../../core/Activity.js";
 import State from "../../core/State.js";
 import Toolbar from "../../components/Toolbar.js";
+import CategoryGrid from "./CategoryGrid.js";
 
 import ic_filter from "../../img/ic_filter.png";
 import ic_arrow_left from "../../img/ic_arrow_left.png";
@@ -19,7 +20,7 @@ export default class CategoryActivity extends Activity {
         return `
             <div id="${this._activityId}">
                 <header id='category-toolbar' class='toolbar'></header>
-                <section id='home-list' class='list'></section>
+                <section id='category-grid' class='grid'></section>
             </div>
         `;
     }
@@ -29,7 +30,7 @@ export default class CategoryActivity extends Activity {
             id: "category-toolbar",
             title: "중고거래 카테고리",
             leftComponent: {
-                id: "toolbar--left--filter",
+                id: "toolbar--left--back",
                 icon: ic_arrow_left,
             },
             rightComponents: [
@@ -39,17 +40,17 @@ export default class CategoryActivity extends Activity {
                 },
             ],
         });
+
+        new CategoryGrid(".grid", {
+            id: "category-grid",
+        });
     }
 
     onClickBackButton(event) {
-        console.log("뒤로가기 클릭~~");
         this.popActivity();
     }
 
     setEvent() {
-        this.addEvent("click", `.toolbar--left`, this.onClickBackButton.bind(this));
-        // this.addEvent("click", `#toolbar--right--category`, this.onClickCategoryButton.bind(this));
-        // this.addEvent("click", `#home-list`, this.onClickList.bind(this));
-        // this.addEvent("click", "#floating-button", this.onClickFloatingButton.bind(this));
+        this.addEvent("click", `#toolbar--left--back`, this.onClickBackButton.bind(this));
     }
 }

@@ -1,0 +1,25 @@
+$defaultMargin : 10px;
+$rowSize : 95px;
+$iconSize : 30px;
+
+.grid {
+    display: grid;
+    margin-top: 30px;
+    grid-template-rows: $rowSize $rowSize;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-left: $defaultMargin;
+    padding-right: $defaultMargin;
+
+    &--cell {
+        text-align: center;
+        &--img {
+            width: fit-content;
+            height: $iconSize;
+        }
+
+        &--text {
+            font-size: 12px;
+            margin-top: 12px;
+        }
+    }
+}

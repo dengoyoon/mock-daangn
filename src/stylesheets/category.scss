@@ -1,0 +1,12 @@
+@import 'toolbar.scss';
+
+$toolbarHeight : 50px;
+$bottomNavigationHeight : 55px;
+$floatingButtonSize : 50px;
+$floatingButtonMargin : 15px;
+
+#category {
+    display: grid;
+    height: 100%;
+    grid-template-rows: $toolbarHeight 1fr;
+}

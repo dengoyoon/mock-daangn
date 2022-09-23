@@ -4,6 +4,7 @@ import Toolbar from "../../components/Toolbar.js";
 import DetailActivity from "../detail/DetailActivity.js";
 import HomeList from "./HomeList.js";
 import BottomNavigation from "./BottomNavigation.js";
+import CategoryActivity from "../category/CategoryActivity.js";
 
 import ic_search from "../../img/ic_search.png";
 import ic_category from "../../img/ic_category.png";
@@ -39,7 +40,10 @@ export default class MainActivity extends Activity {
         new Toolbar(".toolbar", {
             id: "main-toolbar",
             title: "",
-            leftComponent: "행신 3동",
+            leftComponent: {
+                id: "toolbar--left--town",
+                text: "행신 3동",
+            },
             rightComponents: [
                 {
                     id: "toolbar--right--search",
@@ -71,7 +75,7 @@ export default class MainActivity extends Activity {
     }
 
     onClickCategoryButton(event) {
-        console.log("카테고리 클릭~");
+        this.pushActivity(new CategoryActivity("#root"));
     }
 
     onClickList(event) {
@@ -87,7 +91,7 @@ export default class MainActivity extends Activity {
     }
 
     setEvent() {
-        this.addEvent("click", `.toolbar--left`, this.onClickTownName.bind(this));
+        this.addEvent("click", `#toolbar--left--town`, this.onClickTownName.bind(this));
         this.addEvent("click", `#toolbar--right--category`, this.onClickCategoryButton.bind(this));
         this.addEvent("click", `#home-list`, this.onClickList.bind(this));
         this.addEvent("click", "#floating-button", this.onClickFloatingButton.bind(this));

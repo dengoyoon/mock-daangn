@@ -1,5 +1,7 @@
 import Component from "../core/Component.js";
 
+const isIcon = (component) => component.icon !== undefined;
+
 export default class Toolbar extends Component {
     _title;
     _id;
@@ -18,10 +20,18 @@ export default class Toolbar extends Component {
 
     template() {
         return `
-            <div class="toolbar--left">${this._leftComponent}</div>
+            <div class="toolbar--left">${this.getLeftComponent()}</div>
             <div class="toolbar--title">${this._title}</div>
             <div class="toolbar--right">${this.getRightComponents()}</div>
         `;
+    }
+
+    getLeftComponent() {
+        if (isIcon(this._leftComponent)) {
+            return `<img id='${this._leftComponent.id}' class="toolbar--left--item" src="${this._leftComponent.icon}"/>`;
+        } else {
+            return `<div id='${this._leftComponent.id}'>${this._leftComponent.text}</div>`;
+        }
     }
 
     getRightComponents() {

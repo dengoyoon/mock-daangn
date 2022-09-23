@@ -6,7 +6,7 @@ $iconSize : 18px;
     background-color: white;
     border-bottom: 0.1px solid $divideLineColor;
     margin: 0;
-    grid-template-columns: 1fr 100px 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     font-size: 17px;
     font-weight: 600;
 
@@ -14,8 +14,15 @@ $iconSize : 18px;
         display: flex;
         margin-left: 20px;
         align-items: center;
+
+        &--item {
+            width: $iconSize;
+            height: fit-content;
+        }
     }
     &--title {
+        display: flex;
+        align-items: center;
         text-align: center;
     }
     &--right {

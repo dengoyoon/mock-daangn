@@ -4,6 +4,7 @@ import Toolbar from "../../components/Toolbar.js";
 import DetailActivity from "../detail/DetailActivity.js";
 import HomeList from "./HomeList.js";
 import BottomNavigation from "./BottomNavigation.js";
+import CategoryActivity from "../category/CategoryActivity.js";
 
 import ic_search from "../../img/ic_search.png";
 import ic_category from "../../img/ic_category.png";
@@ -71,7 +72,7 @@ export default class MainActivity extends Activity {
     }
 
     onClickCategoryButton(event) {
-        console.log("카테고리 클릭~");
+        this.pushActivity(new CategoryActivity("#root"));
     }
 
     onClickList(event) {

@@ -1,6 +1,6 @@
 import Component from "../core/Component.js";
 
-const isIcon = (component) => typeof component === "object";
+const isIcon = (component) => component.icon !== undefined;
 
 export default class Toolbar extends Component {
     _title;
@@ -30,7 +30,7 @@ export default class Toolbar extends Component {
         if (isIcon(this._leftComponent)) {
             return `<img id='${this._leftComponent.id}' class="toolbar--left--item" src="${this._leftComponent.icon}"/>`;
         } else {
-            return this._leftComponent;
+            return `<div id='${this._leftComponent.id}'>${this._leftComponent.text}</div>`;
         }
     }
 

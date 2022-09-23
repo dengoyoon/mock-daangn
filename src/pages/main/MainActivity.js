@@ -40,7 +40,10 @@ export default class MainActivity extends Activity {
         new Toolbar(".toolbar", {
             id: "main-toolbar",
             title: "",
-            leftComponent: "행신 3동",
+            leftComponent: {
+                id: "toolbar--left--town",
+                text: "행신 3동",
+            },
             rightComponents: [
                 {
                     id: "toolbar--right--search",
@@ -88,7 +91,7 @@ export default class MainActivity extends Activity {
     }
 
     setEvent() {
-        this.addEvent("click", `.toolbar--left`, this.onClickTownName.bind(this));
+        this.addEvent("click", `#toolbar--left--town`, this.onClickTownName.bind(this));
         this.addEvent("click", `#toolbar--right--category`, this.onClickCategoryButton.bind(this));
         this.addEvent("click", `#home-list`, this.onClickList.bind(this));
         this.addEvent("click", "#floating-button", this.onClickFloatingButton.bind(this));

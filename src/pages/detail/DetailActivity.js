@@ -34,21 +34,25 @@ export default class DetailActivity extends Activity {
             id: "detail-toolbar",
             title: "",
             leftComponent: {
-                id: "toolbar--left--back",
+                id: "detail--toolbar--left--back",
                 icon: ic_arrow_left,
             },
             rightComponents: [
                 {
-                    id: "toolbar--right--share",
+                    id: "detail--toolbar--right--share",
                     icon: ic_share,
                 },
                 {
-                    id: "toolbar--right--more",
+                    id: "detail--toolbar--right--more",
                     icon: ic_more,
                 },
             ],
         });
 
         new DetailBody(".body", {});
+    }
+
+    setEvent() {
+        this.addEvent("click", `#detail--toolbar--left--back`, this.onClickBackButton.bind(this));
     }
 }

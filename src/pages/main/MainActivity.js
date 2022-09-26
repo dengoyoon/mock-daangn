@@ -41,20 +41,20 @@ export default class MainActivity extends Activity {
             id: "main-toolbar",
             title: "",
             leftComponent: {
-                id: "toolbar--left--town",
+                id: "main--toolbar--left--town",
                 text: "행신 3동",
             },
             rightComponents: [
                 {
-                    id: "toolbar--right--search",
+                    id: "main--toolbar--right--search",
                     icon: ic_search,
                 },
                 {
-                    id: "toolbar--right--category",
+                    id: "main--toolbar--right--category",
                     icon: ic_category,
                 },
                 {
-                    id: "toolbar--right--alarm",
+                    id: "main--toolbar--right--alarm",
                     icon: ic_alarm,
                 },
             ],
@@ -91,8 +91,12 @@ export default class MainActivity extends Activity {
     }
 
     setEvent() {
-        this.addEvent("click", `#toolbar--left--town`, this.onClickTownName.bind(this));
-        this.addEvent("click", `#toolbar--right--category`, this.onClickCategoryButton.bind(this));
+        this.addEvent("click", `#main--toolbar--left--town`, this.onClickTownName.bind(this));
+        this.addEvent(
+            "click",
+            `#main--toolbar--right--category`,
+            this.onClickCategoryButton.bind(this)
+        );
         this.addEvent("click", `#home-list`, this.onClickList.bind(this));
         this.addEvent("click", "#floating-button", this.onClickFloatingButton.bind(this));
     }

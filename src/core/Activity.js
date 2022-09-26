@@ -35,4 +35,8 @@ export default class Activity extends Component {
             activityStack: [...getPoppedArray(activityStackObserver.get().activityStack)],
         });
     }
+
+    onClickBackButton(event) {
+        this.popActivity();
+    }
 }

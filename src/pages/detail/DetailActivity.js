@@ -1,7 +1,15 @@
 import Activity from "../../core/Activity.js";
 import State from "../../core/State.js";
+import Toolbar from "../../components/Toolbar.js";
+import DetailBody from "./DetailBody.js";
 
-import "../../stylesheets/category.scss";
+import "../../stylesheets/detail.scss";
+
+import ic_share from "../../img/ic_share.png";
+import ic_heart_empty from "../../img/ic_heart_empty.png";
+import ic_more from "../../img/ic_more.png";
+import ic_arrow_left from "../../img/ic_arrow_left.png";
+import ic_profile from "../../img/ic_profile.png";
 
 export default class DetailActivity extends Activity {
     constructor(selector, props) {
@@ -15,11 +23,32 @@ export default class DetailActivity extends Activity {
         return `
             <div id="${this._activityId}">
                 <header id='detail-toolbar' class='toolbar'></header>
-                <section id='detail-body' class='list'></section>
+                <section id='detail-body' class='body'></section>
                 <footer id="detail-bottom" class='bottom-navigation'></footer>
             </div>
         `;
     }
 
-    mounted() {}
+    mounted() {
+        new Toolbar(".toolbar", {
+            id: "detail-toolbar",
+            title: "",
+            leftComponent: {
+                id: "toolbar--left--back",
+                icon: ic_arrow_left,
+            },
+            rightComponents: [
+                {
+                    id: "toolbar--right--share",
+                    icon: ic_share,
+                },
+                {
+                    id: "toolbar--right--more",
+                    icon: ic_more,
+                },
+            ],
+        });
+
+        new DetailBody(".body", {});
+    }
 }

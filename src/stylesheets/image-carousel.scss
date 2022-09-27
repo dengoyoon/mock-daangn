@@ -1,0 +1,21 @@
+.slide_box {
+    border: rgb(255, 14, 135) 3px dotted;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+  
+.slide_item {
+    background-color: rgb(255, 215, 187);
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    font-size: larger;
+    border: rgb(165, 165, 165) 0.5px solid;
+}
+.slide_list {
+    width: 900px;
+    display: flex;
+    height: 100px;
+}

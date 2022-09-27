@@ -17,6 +17,7 @@ export default class DetailActivity extends Activity {
         this._state = new State({});
         this._activityId = "detail";
         this.setEvent();
+        // 생성자에서 API 정보 받아오기 하자.
     }
 
     template() {

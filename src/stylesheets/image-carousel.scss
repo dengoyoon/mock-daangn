@@ -25,20 +25,22 @@
 
 .slide_box {
     width: 100%;
-    padding-bottom: 90%;
     overflow: hidden;
     position: relative;
+    background-color: aqua;
 }
 
 .slide_list {
-    width: 1000px;
+    width: 300%;
     transition: transform 0.3s ease-in-out;
+    padding: 0;
+    background-color: brown;
     display: flex;
 }
   
 .slide_item {
     width: 100%;
-    padding-bottom: 90%;
+    padding-bottom: 33%;
     overflow: hidden;
     position: relative;
 

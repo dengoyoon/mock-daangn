@@ -5,7 +5,6 @@ import "../../stylesheets/image-carousel.scss";
 import dummy_bear1 from "../../img/dummy_bear1.jpeg";
 import dummy_bear2 from "../../img/dummy_bear2.jpeg";
 import dummy_bear3 from "../../img/dummy_bear3.jpeg";
-import dummy_bear4 from "../../img/dummy_bear4.jpeg";
 
 export default class ImageCarousel extends Component {
     _currentImageIndex;
@@ -27,7 +26,7 @@ export default class ImageCarousel extends Component {
     template() {
         return `
             <div class="slide_box">
-                <div class="slide_list">
+                <div class='slide_list'>
                     <div class="slide_item">
                         <img  class='slide_item--img' src='${dummy_bear1}'/>
                     </div>
@@ -36,9 +35,6 @@ export default class ImageCarousel extends Component {
                     </div>
                     <div class="slide_item">
                         <img  class='slide_item--img' src='${dummy_bear3}'/>
-                    </div>
-                    <div class="slide_item">
-                        <img  class='slide_item--img' src='${dummy_bear4}'/>
                     </div>
                 </div>
             </div>
@@ -61,9 +57,25 @@ export default class ImageCarousel extends Component {
             "translateX(" + -this._moveSize * this._currentImageIndex + "px)";
     }
 
+    onHandleStart(event) {
+        console.log("START");
+    }
+
+    onHandleMove(event) {
+        console.log("MOVE");
+    }
+
+    onHandleEnd(event) {
+        console.log("END");
+    }
+
     setEvent() {
         // 일단 ,,, 해봤다
         this.addEvent("click", ".nextBtn", this.onClickNext.bind(this));
         this.addEvent("click", ".prevBtn", this.onClickPrev.bind(this));
+
+        this.addEvent("touchstart", ".slide_list", this.onHandleStart.bind(this));
+        this.addEvent("touchmove", ".slide_list", this.onHandleMove.bind(this));
+        this.addEvent("touchend", ".slide_list", this.onHandleEnd.bind(this));
     }
 }

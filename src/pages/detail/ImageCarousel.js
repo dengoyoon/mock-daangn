@@ -44,29 +44,31 @@ export default class ImageCarousel extends Component {
     }
 
     onClickNext(event) {
-        if (this._currentImageIndex >= this._carouselContents.length - 1) return;
+        // if (this._currentImageIndex >= this._carouselContents.length - 1) return;
         this._currentImageIndex++;
-        this._carouselSlide.style.transform =
-            "translateX(" + -this._moveSize * this._currentImageIndex + "px)";
+        this._carouselSlide.style.transform = "translateX(" + -this._currentImageIndex + "px)";
+        // this._carouselSlide.style.transform =
+        //     "translateX(" + -this._moveSize * this._currentImageIndex + "px)";
     }
 
     onClickPrev(event) {
-        if (this._currentImageIndex <= 0) return;
+        // if (this._currentImageIndex <= 0) return;
         this._currentImageIndex--;
-        this._carouselSlide.style.transform =
-            "translateX(" + -this._moveSize * this._currentImageIndex + "px)";
+        this._carouselSlide.style.transform = "translateX(" + -this._currentImageIndex + "px)";
     }
 
     onHandleStart(event) {
-        console.log("START");
+        // console.log(event.touches[0].clientX);
+        this._carouselSlide.style.transform = "translateX(" + -this._currentImageIndex + "px)";
     }
 
     onHandleMove(event) {
-        console.log("MOVE");
+        // console.log(event.touches[0].clientX);
+        this._carouselSlide.style.transform = "translateX(" + -event.touches[0].clientX + "px)";
     }
 
     onHandleEnd(event) {
-        console.log("END");
+        console.log(event.touches);
     }
 
     setEvent() {

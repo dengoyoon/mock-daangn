@@ -43,6 +43,14 @@ export default class ImageCarousel extends Component {
         `;
     }
 
+    /*
+    스타트 x 좌표를 저장한다
+    move에서 계속 x좌표를 저장한다
+    end에서 위의 두개를 뺀다.
+    이 결과 값을 가지고 현재 페이지를 유지할 것 인지, 다음페이지 혹은 이전 페이지로 넘어갈 것 인지 정한다
+    첫번째 페이지와 마지막 페이지에서는 이전, 다음으로 넘어가지 못하게 코드로 막는다
+    */
+
     onClickNext(event) {
         // if (this._currentImageIndex >= this._carouselContents.length - 1) return;
         this._currentImageIndex++;

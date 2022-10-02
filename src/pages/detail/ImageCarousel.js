@@ -85,7 +85,7 @@ export default class ImageCarousel extends Component {
     }
 
     onHandleEnd(event) {
-        if (this.calcTouchEndToStart() > (this._moveSize * 2) / 3) {
+        if (this.calcTouchEndToStart() > (this._moveSize * 3) / 5) {
             // 이전페이지
             if (this._currentImageIndex > 0) {
                 this._currentImageIndex -= 1;

@@ -81,8 +81,6 @@ export default class ImageCarousel extends Component {
 
     onHandleMove(event) {
         this._touchEndX = event.touches[0].clientX;
-        console.log("INDEX", -this._currentImageIndex * this._moveSize);
-        console.log("DIFF", this.calcTouchEndToStart());
         this.translateCarousel(this.getCurrentImageX() + this.calcTouchEndToStart());
     }
 

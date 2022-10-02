@@ -71,6 +71,10 @@ export default class ImageCarousel extends Component {
         return -this._currentImageIndex * this._moveSize;
     }
 
+    getSwipeFlagLength() {
+        return (this._moveSize * 3) / 5;
+    }
+
     translateCarousel(moveX) {
         this._carouselSlide.style.transform = `translateX(${moveX}px)`;
     }
@@ -85,12 +89,12 @@ export default class ImageCarousel extends Component {
     }
 
     onHandleEnd(event) {
-        if (this.calcTouchEndToStart() > (this._moveSize * 3) / 5) {
+        if (this.calcTouchEndToStart() > this.getSwipeFlagLength()) {
             // 이전페이지
             if (this._currentImageIndex > 0) {
                 this._currentImageIndex -= 1;
             }
-        } else if (this.calcTouchEndToStart() < (-1 * this._moveSize * 3) / 5) {
+        } else if (this.calcTouchEndToStart() < -this.getSwipeFlagLength()) {
             // 다음페이지
             if (this._currentImageIndex < this._carouselContents.length - 1) {
                 this._currentImageIndex += 1;

@@ -1,0 +1,24 @@
+.slide_box {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slide_list {
+    width: 300%;
+    transition: transform 0.3s ease-in-out;
+    padding: 0;
+    display: flex;
+}
+  
+.slide_item {
+    width: 100%;
+    padding-bottom: 33%;
+    overflow: hidden;
+    position: relative;
+
+    &--img {
+        width: 100%;
+        position: absolute;
+    }
+}

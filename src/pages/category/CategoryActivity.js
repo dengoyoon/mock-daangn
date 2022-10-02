@@ -30,12 +30,12 @@ export default class CategoryActivity extends Activity {
             id: "category-toolbar",
             title: "중고거래 카테고리",
             leftComponent: {
-                id: "toolbar--left--back",
+                id: "category--toolbar--left--back",
                 icon: ic_arrow_left,
             },
             rightComponents: [
                 {
-                    id: "toolbar--right--filter",
+                    id: "category--toolbar--right--filter",
                     icon: ic_filter,
                 },
             ],
@@ -46,11 +46,7 @@ export default class CategoryActivity extends Activity {
         });
     }
 
-    onClickBackButton(event) {
-        this.popActivity();
-    }
-
     setEvent() {
-        this.addEvent("click", `#toolbar--left--back`, this.onClickBackButton.bind(this));
+        this.addEvent("click", `#category--toolbar--left--back`, this.onClickBackButton.bind(this));
     }
 }

@@ -1,40 +1,13 @@
-// .slide_box {
-//     width: 100%;
-//     padding-bottom: 90%;
-//     overflow: hidden;
-//     position: relative;
-// }
-  
-// .slide_item {
-//     width: 100%;
-//     padding-bottom: 90%;
-//     overflow: hidden;
-//     position: relative;
-
-//     &--img {
-//         width: 100%;
-//         position: absolute;
-//     }
-// }
-
-// .slide_list {
-//     width: 1000px;
-//     transition: transform 0.3s ease-in-out;
-//     display: flex;
-// }
-
 .slide_box {
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: aqua;
 }
 
 .slide_list {
     width: 300%;
     transition: transform 0.3s ease-in-out;
     padding: 0;
-    background-color: brown;
     display: flex;
 }
   

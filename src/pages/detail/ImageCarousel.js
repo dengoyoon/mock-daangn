@@ -11,6 +11,8 @@ export default class ImageCarousel extends Component {
     _carouselSlide;
     _carouselContents;
     _moveSize;
+    _touchStartX;
+    _touchEndX;
 
     constructor(selector, props) {
         super(selector, props);
@@ -20,6 +22,8 @@ export default class ImageCarousel extends Component {
         this._carouselSlide = document.querySelector(".slide_list");
         this._carouselContents = document.querySelectorAll(".slide_item");
         this._moveSize = this._carouselContents[0].clientWidth;
+        this._touchStartX = 0;
+        this._touchEndX = 0;
         this.setEvent();
     }
 
@@ -38,8 +42,6 @@ export default class ImageCarousel extends Component {
                     </div>
                 </div>
             </div>
-            <button class="prevBtn">prev</button>
-            <button class="nextBtn">next</button>
         `;
     }
 
@@ -61,39 +63,46 @@ export default class ImageCarousel extends Component {
     첫번째 페이지에서 터치 이벤트 발생할때 : (터치 움직이는시점 x - 터치 시작시점 x) + 사진크기 * 인덱스(2)
     */
 
-    onClickNext(event) {
-        // if (this._currentImageIndex >= this._carouselContents.length - 1) return;
-        this._currentImageIndex++;
-        this._carouselSlide.style.transform = "translateX(" + -this._currentImageIndex + "px)";
-        // this._carouselSlide.style.transform =
-        //     "translateX(" + -this._moveSize * this._currentImageIndex + "px)";
+    calcTouchEndToStart() {
+        return this._touchEndX - this._touchStartX;
     }
 
-    onClickPrev(event) {
-        // if (this._currentImageIndex <= 0) return;
-        this._currentImageIndex--;
-        this._carouselSlide.style.transform = "translateX(" + -this._currentImageIndex + "px)";
+    getCurrentImageX() {
+        return -this._currentImageIndex * this._moveSize;
+    }
+
+    translateCarousel(moveX) {
+        this._carouselSlide.style.transform = `translateX(${moveX}px)`;
     }
 
     onHandleStart(event) {
-        // console.log(event.touches[0].clientX);
-        this._carouselSlide.style.transform = "translateX(" + -this._currentImageIndex + "px)";
+        this._touchStartX = event.touches[0].clientX;
     }
 
     onHandleMove(event) {
-        // console.log(event.touches[0].clientX);
-        this._carouselSlide.style.transform = "translateX(" + -event.touches[0].clientX + "px)";
+        this._touchEndX = event.touches[0].clientX;
+        console.log("INDEX", -this._currentImageIndex * this._moveSize);
+        console.log("DIFF", this.calcTouchEndToStart());
+        this.translateCarousel(this.getCurrentImageX() + this.calcTouchEndToStart());
     }
 
     onHandleEnd(event) {
-        console.log(event.touches);
+        if (this.calcTouchEndToStart() > (this._moveSize * 2) / 3) {
+            // 이전페이지
+            if (this._currentImageIndex > 0) {
+                this._currentImageIndex -= 1;
+            }
+        } else if (this.calcTouchEndToStart() < (-1 * this._moveSize * 3) / 5) {
+            // 다음페이지
+            if (this._currentImageIndex < this._carouselContents.length - 1) {
+                this._currentImageIndex += 1;
+            }
+        }
+
+        this.translateCarousel(this.getCurrentImageX());
     }
 
     setEvent() {
-        // 일단 ,,, 해봤다
-        this.addEvent("click", ".nextBtn", this.onClickNext.bind(this));
-        this.addEvent("click", ".prevBtn", this.onClickPrev.bind(this));
-
         this.addEvent("touchstart", ".slide_list", this.onHandleStart.bind(this));
         this.addEvent("touchmove", ".slide_list", this.onHandleMove.bind(this));
         this.addEvent("touchend", ".slide_list", this.onHandleEnd.bind(this));

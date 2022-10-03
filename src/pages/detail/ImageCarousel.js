@@ -79,7 +79,12 @@ export default class ImageCarousel extends Component {
         this._carouselSlide.style.transform = `translateX(${moveX}px)`;
     }
 
+    setTranslateDuration(second) {
+        this._carouselSlide.style.transition = `transform ${second}s ease-in-out`;
+    }
+
     onHandleStart(event) {
+        this.setTranslateDuration(0);
         this._touchStartX = event.touches[0].clientX;
     }
 
@@ -100,7 +105,7 @@ export default class ImageCarousel extends Component {
                 this._currentImageIndex += 1;
             }
         }
-
+        this.setTranslateDuration(0.3);
         this.translateCarousel(this.getCurrentImageX());
     }
 

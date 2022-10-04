@@ -1,4 +1,5 @@
 import Component from "../../core/Component.js";
+import DetailInfo from "./DetailInfo.js";
 import ImageCarousel from "./ImageCarousel.js";
 
 export default class DetailBody extends Component {
@@ -17,5 +18,6 @@ export default class DetailBody extends Component {
 
     mounted() {
         new ImageCarousel("#detail--carousel");
+        new DetailInfo("#detail--info");
     }
 }

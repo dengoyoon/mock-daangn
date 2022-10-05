@@ -1,5 +1,7 @@
 import Component from "../../core/Component.js";
 
+import "../../stylesheets/detail-info.scss";
+
 import ic_profile from "../../img/ic_profile.png";
 
 export default class DetailInfo extends Component {
@@ -25,7 +27,7 @@ export default class DetailInfo extends Component {
                     제가 화날 때마다 좀 때려서 약간 찌그러져 있구요.
                     그래도 싸고 큰 곰인형 구매 원하신다면 연락 주세요. 감사합니다.
                 </div>
-                <div class='content--hits'>
+                <div class='content--chat-heart-hits'>
                     조회 107
                 </div>
             </div>

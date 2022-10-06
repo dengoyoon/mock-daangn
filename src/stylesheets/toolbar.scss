@@ -3,6 +3,11 @@ $iconSize : 18px;
 
 .toolbar {
     display: grid;
+    z-index: 1;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
     background-color: white;
     border-bottom: 0.1px solid $divideLineColor;
     margin: 0;
@@ -38,4 +43,9 @@ $iconSize : 18px;
             height: fit-content;
         }
     }
+}
+
+.transparent {
+    background-color: rgb(190, 40, 40, 0);
+    border-bottom: 0;
 }

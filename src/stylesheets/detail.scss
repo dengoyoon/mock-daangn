@@ -1,7 +1,8 @@
 @import 'toolbar.scss';
 
 $toolbarHeight : 50px;
-$bottomNavigationHeight : 55px;
+$bottomNavigationHeight : 72px;
+$divideLineColor : rgb(231, 231, 231);
 
 #detail {
     display: grid;
@@ -10,7 +11,7 @@ $bottomNavigationHeight : 55px;
     grid-template-rows: $toolbarHeight 1fr $bottomNavigationHeight;
 }
 
-.body {
+#detail-body {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 1;
@@ -21,4 +22,11 @@ $bottomNavigationHeight : 55px;
         display: none;
         width: 0 !important;
     }
+}
+
+#detail-bottom {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-top: 1px solid $divideLineColor;
 }

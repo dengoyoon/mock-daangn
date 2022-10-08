@@ -2,6 +2,7 @@ import Activity from "../../core/Activity.js";
 import State from "../../core/State.js";
 import Toolbar from "../../components/Toolbar.js";
 import DetailBody from "./DetailBody.js";
+import DetailBottom from "./DetailBottom.js";
 
 import "../../stylesheets/detail.scss";
 
@@ -33,7 +34,7 @@ export default class DetailActivity extends Activity {
             <div id="${this._activityId}">
                 <header id='detail-toolbar' class='toolbar transparent'></header>
                 <section id='detail-body' class='body'></section>
-                <footer id="detail-bottom" class='bottom-navigation'></footer>
+                <footer id="detail-bottom" class='detail-bottom'></footer>
             </div>
         `;
     }
@@ -61,6 +62,8 @@ export default class DetailActivity extends Activity {
         new DetailBody(".body", {
             setScrollTop: this.setScrollTop.bind(this),
         });
+
+        new DetailBottom(".detail-bottom");
     }
 
     setScrollTop(newScrollTop) {

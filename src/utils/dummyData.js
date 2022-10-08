@@ -102,4 +102,32 @@ const dummyHome = [
     },
 ];
 
-export { dummyHome };
+const dummyMoreProducts = [
+    {
+        productImageUrl: dummy_hood,
+        productName: "후드티",
+        price: 45000,
+    },
+    {
+        productImageUrl: dummy_hood,
+        productName: "후드티",
+        price: 45000,
+    },
+    {
+        productImageUrl: dummy_cleaner,
+        productName: "매장용 청소기 급처합니다",
+        price: 99000,
+    },
+    {
+        productImageUrl: dummy_cleaner,
+        productName: "매장용 청소기 급처합니다",
+        price: 99000,
+    },
+    {
+        productImageUrl: dummy_hood,
+        productName: "후드티",
+        price: 45000,
+    },
+];
+
+export { dummyHome, dummyMoreProducts };

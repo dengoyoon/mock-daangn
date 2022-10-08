@@ -1,0 +1,28 @@
+$iconSize : 14px;
+$defaultMargin : 15px;
+
+.more-product {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: $defaultMargin;
+    margin-right: $defaultMargin;
+    display: flex;
+    align-items: center;
+
+    &--name {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    &--next {
+        margin-left: auto;
+        width: $iconSize;
+        height: fit-content;
+    }
+}
+
+.product-grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr;
+}

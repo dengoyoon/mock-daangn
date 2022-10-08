@@ -1,4 +1,5 @@
 import Component from "../core/Component.js";
+import { scrollObserver } from "../core/Observer.js";
 import State from "../core/State.js";
 
 const isIcon = (component) => component.icon !== undefined;
@@ -18,6 +19,7 @@ export default class Toolbar extends Component {
         this._state = new State({
             mode: props.mode,
         });
+        scrollObserver.subscribe(this.setState.bind(this));
         this.render();
         this.setEvent();
     }
@@ -32,7 +34,7 @@ export default class Toolbar extends Component {
             this._target.style.borderBottom = "0";
         } else {
             this._target.style.backgroundColor = "rgb(255, 255, 255)";
-            this._target.style.borderBottom = "0.1px solid $divideLineColor";
+            this._target.style.borderBottom = "0.1px solid rgb(231, 231, 231)";
         }
     }
 

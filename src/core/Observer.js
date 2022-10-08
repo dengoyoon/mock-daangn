@@ -30,7 +30,11 @@ class Observer {
     subscribe(callback) {
         this._subscribers.add(callback);
     }
+
+    clearSubscribe() {
+        this._subscribers = new Set();
+    }
 }
 
 export const activityStackObserver = new Observer({ activityStack: [] });
-export const detailScrollObserver = new Observer({ scrollTop: 0 });
+export const scrollObserver = new Observer({ mode: "normal" });

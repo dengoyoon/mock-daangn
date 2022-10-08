@@ -1,4 +1,5 @@
 import Component from "../../core/Component.js";
+import { scrollObserver } from "../../core/Observer.js";
 import DetailInfo from "./DetailInfo.js";
 import ImageCarousel from "./ImageCarousel.js";
 import MoreProduct from "./MoreProduct.js";
@@ -25,7 +26,15 @@ export default class DetailBody extends Component {
     }
 
     onScrollBody(event) {
-        // this._props.setScrollTop(document.querySelector("#detail-body").scrollTop);
+        if (document.querySelector("#detail-body").scrollTop < 305) {
+            scrollObserver.update({
+                mode: "transparent",
+            });
+        } else {
+            scrollObserver.update({
+                mode: "normal",
+            });
+        }
     }
 
     setEvent() {

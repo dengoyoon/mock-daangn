@@ -5,6 +5,7 @@ import DetailActivity from "../detail/DetailActivity.js";
 import HomeList from "./HomeList.js";
 import BottomNavigation from "./BottomNavigation.js";
 import CategoryActivity from "../category/CategoryActivity.js";
+import { scrollObserver } from "../../core/Observer.js";
 
 import ic_search from "../../img/ic_search.png";
 import ic_category from "../../img/ic_category.png";
@@ -18,7 +19,10 @@ import "../../stylesheets/main.scss";
 export default class MainActivity extends Activity {
     constructor(selector, props) {
         super(selector, props);
-        this._state = new State({});
+        scrollObserver.update({
+            mode: "normal",
+        });
+        this._state = new State(scrollObserver.get());
         this._activityId = "main";
         this.setEvent();
     }
@@ -40,7 +44,7 @@ export default class MainActivity extends Activity {
         new Toolbar(".toolbar", {
             id: "main-toolbar",
             title: "",
-            mode: "normal",
+            mode: this.state.mode,
             leftComponent: {
                 id: "main--toolbar--left--town",
                 text: "행신 3동",

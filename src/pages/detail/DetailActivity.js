@@ -6,6 +6,9 @@ import DetailBottom from "./DetailBottom.js";
 
 import "../../stylesheets/detail.scss";
 
+import ic_share from "../../img/ic_share.png";
+import ic_more from "../../img/ic_more.png";
+import ic_arrow_left from "../../img/ic_arrow_left.png";
 import ic_share_white from "../../img/ic_share_white.png";
 import ic_more_white from "../../img/ic_more_white.png";
 import ic_arrow_left_white from "../../img/ic_arrow_left_white.png";
@@ -32,7 +35,7 @@ export default class DetailActivity extends Activity {
     template() {
         return `
             <div id="${this._activityId}">
-                <header id='detail-toolbar' class='toolbar transparent'></header>
+                <header id='detail-toolbar' class='toolbar'></header>
                 <section id='detail-body' class='body'></section>
                 <footer id="detail-bottom" class='detail-bottom'></footer>
             </div>
@@ -43,18 +46,22 @@ export default class DetailActivity extends Activity {
         new Toolbar(".toolbar", {
             id: "detail-toolbar",
             title: "",
+            mode: "transparent",
             leftComponent: {
                 id: "detail--toolbar--left--back",
-                icon: ic_arrow_left_white,
+                icon: ic_arrow_left,
+                iconWhite: ic_arrow_left_white,
             },
             rightComponents: [
                 {
                     id: "detail--toolbar--right--share",
-                    icon: ic_share_white,
+                    icon: ic_share,
+                    iconWhite: ic_share_white,
                 },
                 {
                     id: "detail--toolbar--right--more",
-                    icon: ic_more_white,
+                    icon: ic_more,
+                    iconWhite: ic_more_white,
                 },
             ],
         });

@@ -40,6 +40,7 @@ export default class MainActivity extends Activity {
         new Toolbar(".toolbar", {
             id: "main-toolbar",
             title: "",
+            mode: "normal",
             leftComponent: {
                 id: "main--toolbar--left--town",
                 text: "행신 3동",

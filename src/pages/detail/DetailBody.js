@@ -7,6 +7,7 @@ export default class DetailBody extends Component {
     constructor(selector, props) {
         super(selector, props);
         this.render();
+        this.setEvent();
     }
 
     template() {
@@ -21,5 +22,13 @@ export default class DetailBody extends Component {
         new ImageCarousel("#detail--carousel");
         new DetailInfo("#detail--info");
         new MoreProduct("#detail--moreproduct");
+    }
+
+    onScrollBody(event) {
+        // this._props.setScrollTop(document.querySelector("#detail-body").scrollTop);
+    }
+
+    setEvent() {
+        this.addEvent("scroll", "#detail-body", this.onScrollBody.bind(this));
     }
 }

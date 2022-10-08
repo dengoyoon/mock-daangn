@@ -33,3 +33,4 @@ class Observer {
 }
 
 export const activityStackObserver = new Observer({ activityStack: [] });
+export const detailScrollObserver = new Observer({ scrollTop: 0 });

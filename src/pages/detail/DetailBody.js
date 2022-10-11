@@ -27,13 +27,15 @@ export default class DetailBody extends Component {
 
     onScrollBody(event) {
         if (document.querySelector("#detail-body").scrollTop < 305) {
-            scrollObserver.update({
-                mode: "transparent",
-            });
+            scrollObserver.get().mode === "normal" &&
+                scrollObserver.update({
+                    mode: "transparent",
+                });
         } else {
-            scrollObserver.update({
-                mode: "normal",
-            });
+            scrollObserver.get().mode === "transparent" &&
+                scrollObserver.update({
+                    mode: "normal",
+                });
         }
     }
 

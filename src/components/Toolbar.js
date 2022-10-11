@@ -24,6 +24,15 @@ export default class Toolbar extends Component {
         this.setEvent();
     }
 
+    template() {
+        this.drawCurrentMode();
+        return `
+            <div class="toolbar--left">${this.getLeftComponent()}</div>
+            <div class="toolbar--title">${this._title}</div>
+            <div class="toolbar--right">${this.getRightComponents()}</div>
+        `;
+    }
+
     isTransparentMode() {
         return this.state.mode === "transparent";
     }
@@ -36,15 +45,6 @@ export default class Toolbar extends Component {
             this._target.style.backgroundColor = "rgb(255, 255, 255)";
             this._target.style.borderBottom = "0.1px solid rgb(231, 231, 231)";
         }
-    }
-
-    template() {
-        this.drawCurrentMode();
-        return `
-            <div class="toolbar--left">${this.getLeftComponent()}</div>
-            <div class="toolbar--title">${this._title}</div>
-            <div class="toolbar--right">${this.getRightComponents()}</div>
-        `;
     }
 
     getLeftComponent() {
